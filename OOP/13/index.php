@@ -18,7 +18,7 @@
 
 <?php
     //nuskaitom Web servisą
-    for($i=0; $i<2; $i++ ){
+    for($i=0; $i<10; $i++ ){
         $url = "https://api.chucknorris.io/jokes/random";
         $result = json_decode(file_get_contents($url));
         $res[] = $result;
@@ -33,7 +33,12 @@
 
 <div class="container mt-2">
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+        <?php
+            echo "<p>".$_SESSION['message']."</p>";
+            unset ($_SESSION['message']);
+        ?>
+        </div>
 
         <div class="col-md-6">
         <?php foreach($jokes -> getJokes() as $joke): ?>
