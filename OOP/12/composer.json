@@ -1,0 +1,15 @@
+{
+    "name": "mantas/12",
+    "authors": [
+        {
+            "name": "Mantas Jakavonis",
+            "email": "mantjakas@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AllClasses\\" : "src"
+        }
+    }
+}
