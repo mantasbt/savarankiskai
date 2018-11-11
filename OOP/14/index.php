@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>14</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php  
+    require("vendor/autoload.php");
+
+    use AllClasses\Classes\Fakeris;
+
+    for ($i=0;  $i < 5; $i++) { 
+        $faker = Faker\Factory::create();
+        $data = (object)[
+            'author' => $faker->name,
+            'comment' => $faker->text,
+            'created_at' => $faker->date
+        ];
+        $res[] = $data;
+    }
+
+    $records = new Fakeris($res);
+    $records->saveRecords();
+
+    $author = "a";
+    $limit = 10;
+
+    $allRecords = $records->getRecords($author, $limit);
+
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+    echo json_encode($allRecords, JSON_PRETTY_PRINT);
+?>

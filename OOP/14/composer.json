@@ -1,0 +1,12 @@
+{
+    "name": "Mantas/14",
+    "description": "mantjakas@gmail.com",
+    "require": {
+        "fzaninotto/faker": "^1.8"
+    },
+    "autoload": {
+        "psr-4":{
+            "AllClasses\\" : "src"
+        }
+    }
+}
