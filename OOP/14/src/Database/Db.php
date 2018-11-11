@@ -5,7 +5,7 @@ use Exception;
 
 abstract class Db
 {
-    const HOST = "localhsot";
+    const HOST = "localhost";
     const USER = "root";
     const PASSWORD = "";
     const DB = "faker";
